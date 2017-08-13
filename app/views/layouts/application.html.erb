@@ -11,6 +11,10 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <p>
+      <%= link_to('註冊', new_registration_path(:user)) %> |
+      <%= link_to('登出', destroy_user_session_path, :method => :delete) %>
+    </p>
     <%= yield %>
   </body>
 </html>
