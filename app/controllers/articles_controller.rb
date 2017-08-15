@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  # No need use :find_by for friendly_id > 5.2
+  #load_and_authorize_resource :find_by => :slug
+  load_and_authorize_resource
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
@@ -64,6 +67,8 @@ class ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
+      # No need use friendly.find for friendly_id > 5.2
+      #@article = Article.friendly.find(params[:id])
       @article = Article.find(params[:id])
     end
 
