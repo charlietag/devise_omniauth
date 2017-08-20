@@ -60,3 +60,5 @@ gem 'rolify'
 
 # Pretty URL
 gem 'friendly_id'
+# Pretty URL for non english string
+gem 'babosa'
