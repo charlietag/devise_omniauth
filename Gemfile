@@ -53,6 +53,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+#--------------------------------------------------------------
+#  Extra Gems
+#--------------------------------------------------------------
 # Auth
 gem 'devise'
 gem 'cancancan'
@@ -62,3 +65,6 @@ gem 'rolify'
 gem 'friendly_id'
 # Pretty URL for non english string
 gem 'babosa'
+
+# pagination
+gem 'kaminari'
