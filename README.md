@@ -36,6 +36,11 @@ gem 'kaminari'
 
 ```
 
+* Yarn
+  * jquery
+  * bootstrap
+  * font-awesome
+
 * Configuration
 
 * Database creation
