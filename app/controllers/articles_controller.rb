@@ -10,6 +10,11 @@ class ArticlesController < ApplicationController
     #@articles = Article.all
     # Change for kaminari pagination
     @articles = Article.includes(:user).page params[:page]
+    if params[:page]
+      session[:page_num] = params[:page]
+    else
+      session.delete(:page_num)
+    end
 
   end
 
