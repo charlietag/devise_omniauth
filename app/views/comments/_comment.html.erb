@@ -1,0 +1,28 @@
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <%= comment.user.email %>
+    <% if can? :destroy, comment %>
+      <span class="pull-right">
+        <%= link_to "Destroy",
+          #[comment.article, comment],
+          # The same as the following line
+          article_comment_url(comment.article, comment),
+          class: "label label-danger",
+          method: :delete,
+          data: { confirm:'Are you sure?'}
+        %>
+      </span>
+    <% end %>
+    <% if can? :edit, comment %>
+      <span class="pull-right">
+        <%= link_to "Edit ",
+          #[comment.article, comment],
+          # The same as the following line
+          edit_article_comment_url(comment.article, comment),
+          class: "label label-danger"
+        %>
+      </span>
+    <% end %>
+  </div>
+  <%= comment.content %>
+</div>

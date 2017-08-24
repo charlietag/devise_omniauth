@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :user
+  has_many :comments
 
   # Role using rolify
   resourcify
@@ -30,9 +31,9 @@ class Article < ApplicationRecord
 
   def slug_candidates
     [
-      #:title,
-      [:title, DateTime.now.strftime("%Y-%m-%d") ],
-      [:title, DateTime.now.strftime("%Y-%m-%d"), DateTime.now.to_i ]
+      :title,
+      [:title, DateTime.now.strftime("%Y%m%d") ],
+      [:title, DateTime.now.strftime("%Y%m%d"), DateTime.now.to_i ]
 
       # Maybe for good SEO
       # [ :title, DateTime.now.to_i ]

@@ -9,18 +9,21 @@ class ArticlesController < ApplicationController
   def index
     #@articles = Article.all
     # Change for kaminari pagination
-    @articles = Article.page params[:page]
+    @articles = Article.includes(:user).page params[:page]
 
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    #@comment = Comment.where(article_id: @article)
+    @comment = Comment.new
   end
 
   # GET /articles/new
   def new
-    @article = Article.new
+    #@article = Article.new
+    @article = current_user.articles.build
   end
 
   # GET /articles/1/edit
@@ -30,7 +33,8 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    #@article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     respond_to do |format|
       if @article.save
@@ -77,6 +81,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :user_id)
+      params.require(:article).permit(:title, :content)
     end
 end

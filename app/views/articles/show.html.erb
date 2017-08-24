@@ -27,6 +27,10 @@
       </tr>
   </tbody>
 </table>
+This article has <%= pluralize(@article.comments.count, "Comment") %>
+<hr>
+<%= render @article.comments %>
+<%= render 'comments/form', article: @article %>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

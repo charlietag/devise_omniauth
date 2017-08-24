@@ -5,6 +5,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :articles
+  has_many :comments
+
   after_create :assign_default_role
 
   def assign_default_role
