@@ -33,9 +33,8 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    #@comment = Comment.new(comment_params)
-    #@comment = current_user.comments.build(comment_params)
-    @comment = @article.comments.create(comment_params)
+    #@comment = @article.comments.create(comment_params) # the same as the following line
+    @comment = @article.comments.build(comment_params)
     @comment.user_id = current_user.id
     #render plain: @comment.inspect
 
