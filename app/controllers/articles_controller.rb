@@ -16,7 +16,9 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    #if using "render comment/comments" instead of "render @article.comments"
     #@comment = Comment.where(article_id: @article)
+
     # use this to reuse the same comments/_form
     @comment = Comment.new
   end
