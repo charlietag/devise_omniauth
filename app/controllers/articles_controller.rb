@@ -10,11 +10,16 @@ class ArticlesController < ApplicationController
     #@articles = Article.all
     # Change for kaminari pagination
     @articles = Article.includes(:user).page params[:page]
-    if params[:page]
-      session[:page_num] = params[:page]
-    else
-      session.delete(:page_num)
-    end
+    #used only once , so use flash instead. (do not use flash.now)
+    #flash <--- the request after this render view
+    #flash.now <--- the current render view
+    #if params[:page]
+    #  session[:page_num] = params[:page]
+    #else
+    #  session.delete(:page_num)
+    #end
+
+    flash[:page_num] = params[:page]
 
   end
 
