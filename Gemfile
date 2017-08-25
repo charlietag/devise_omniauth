@@ -61,6 +61,9 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 
+# Omniauth with facebook
+gem 'omniauth-facebook'
+
 # Pretty URL
 gem 'friendly_id'
 # Pretty URL for non english string

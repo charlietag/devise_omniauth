@@ -14,5 +14,9 @@ module DeviseOmniauth
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # My Custom yaml config
+    config.myconfig = config_for(:myconfig)
+
   end
 end
