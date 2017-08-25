@@ -1,7 +1,7 @@
 default: &default
   # Facebook App
-  app_id: xxx
-  app_secret: xxxxxxxxx
+  fb_app_id: xxxxx
+  fb_app_secret: xxxxxxxxxxxxx
 
 development:
   <<: *default
