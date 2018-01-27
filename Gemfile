@@ -71,3 +71,6 @@ gem 'babosa'
 
 # pagination
 gem 'kaminari'
+
+# Beautiful routes (like pretty pagination
+gem 'routing-filter'

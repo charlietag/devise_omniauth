@@ -30,6 +30,9 @@
 
   # pagination
   gem 'kaminari'
+  
+  # Beautiful routes (like pretty pagination
+  gem 'routing-filter'
   ```
 
 * Yarn
@@ -141,6 +144,20 @@
 
   * myconfig.yml
     * https://github.com/charlietag/devise_omniauth/blob/master/config/myconfig.yml.sample
+
+* router-filter
+  * Ref
+    * https://github.com/svenfuchs/routing-filter/tree/master
+  * Gem
+    * gem 'routing-filter'
+  * Usage
+
+    ```
+    # in config/routes.rb
+    Rails.application.routes.draw do
+      filter :pagination, :uuid
+    end
+    ```
 
 * omniauth-facebook
   * Reference

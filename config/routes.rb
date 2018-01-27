@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #routing filter to pretty paginations
+  filter :pagination
+
   #resources :comments
   resources :articles do
     resources :comments
