@@ -145,7 +145,7 @@
   * myconfig.yml
     * https://github.com/charlietag/devise_omniauth/blob/master/config/myconfig.yml.sample
 
-* router-filter
+* routing-filter
   * Ref
     * https://github.com/svenfuchs/routing-filter/tree/master
   * Gem
